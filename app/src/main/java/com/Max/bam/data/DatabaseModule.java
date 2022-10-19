@@ -1,7 +1,5 @@
 package com.Max.bam.data;
 
-import static com.Max.bam.data.AppDatabase.sRoomDatabaseCallback;
-
 import android.content.Context;
 
 import androidx.room.Room;
@@ -21,17 +19,16 @@ import dagger.hilt.components.SingletonComponent;
 public class DatabaseModule {
 
     @Provides
-    public ThemeCardDao provideThemeCardDao(AppDatabase appDatabase){
+    public ThemeCardDao provideThemeCardDao(AppDatabase appDatabase) {
         return appDatabase.themeCardDao();
     }
 
 
     @Provides
     @Singleton
-    public AppDatabase provideDatabase(@ApplicationContext Context appContext){
+    public AppDatabase provideDatabase(@ApplicationContext Context appContext) {
         return Room.databaseBuilder(appContext,
                         AppDatabase.class, "app_database")
-                .addCallback(sRoomDatabaseCallback)
                 .build();
     }
 }
