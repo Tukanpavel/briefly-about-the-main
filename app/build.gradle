@@ -41,6 +41,7 @@ dependencies {
     def room_version = "2.4.3"
     def lifecycle_version = "2.5.1"
     def hilt_version = "2.44"
+    def nav_version = "2.5.2"
 
 
     implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
@@ -62,6 +63,13 @@ dependencies {
     implementation "androidx.room:room-runtime:$room_version"
     implementation "androidx.room:room-rxjava2:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    implementation "androidx.navigation:navigation-fragment:$nav_version"
+    implementation "androidx.navigation:navigation-ui:$nav_version"
+    implementation "androidx.navigation:navigation-compose:$nav_version"
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
+
+    androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.arch.core:core-testing:2.1.0'

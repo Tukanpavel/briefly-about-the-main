@@ -15,6 +15,9 @@ public interface ThemeCardDao {
     @Query("Select * from ThemeCard")
     LiveData<List<ThemeCard>> getAll();
 
+    @Query("Select text from ThemeCard where theme_name = :theme")
+    LiveData<List<String>> getAllTextsByTheme(String theme);
+
     @Insert
     void insertAll(ThemeCard ... themeCards);
 
