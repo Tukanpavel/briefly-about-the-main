@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">bam</string>
+    <string name="button4Name">Как появиись знаки зодиака?</string>
+    <string name="add_word">add_word</string>
+</resources>
