@@ -36,7 +36,5 @@ public class MainActivity extends AppCompatActivity {
         mThemeCardsViewModel.getThemeCards().observe(this, themeCards -> {
             themeCardListAdapter.submitList(themeCards);
         });
-
-        getSupportFragmentManager();
     }
 }

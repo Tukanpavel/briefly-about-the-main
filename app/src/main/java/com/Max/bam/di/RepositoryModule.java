@@ -1,13 +1,11 @@
 package com.Max.bam.di;
 
-import com.Max.bam.data.repository.ThemeCardRepository;
-import com.Max.bam.data.repository.ThemeCardRepositoryImpl;
+import com.Max.bam.ui.theme_card.ThemeCardRepository;
+import com.Max.bam.ui.theme_card.ThemeCardRepositoryImpl;
 
 import dagger.Binds;
 import dagger.Module;
-import dagger.Provides;
 import dagger.hilt.InstallIn;
-import dagger.hilt.android.components.ActivityComponent;
 import dagger.hilt.android.components.ViewModelComponent;
 
 @Module

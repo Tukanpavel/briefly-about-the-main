@@ -1,4 +1,4 @@
-package com.Max.bam.data.repository;
+package com.Max.bam.ui.theme_card;
 
 import androidx.lifecycle.LiveData;
 
@@ -7,6 +7,6 @@ import com.Max.bam.data.entity.ThemeCard;
 import java.util.List;
 
 public interface ThemeCardRepository {
-    public LiveData<List<ThemeCard>> getThemeCardsLiveData();
-    public void insert(ThemeCard themeCard);
+    LiveData<List<ThemeCard>> getThemeCardsLiveData();
+    void insert(ThemeCard themeCard);
     }

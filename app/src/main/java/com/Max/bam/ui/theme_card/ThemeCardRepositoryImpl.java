@@ -1,10 +1,11 @@
-package com.Max.bam.data.repository;
+package com.Max.bam.ui.theme_card;
 
 import androidx.lifecycle.LiveData;
 
 import com.Max.bam.data.AppDatabase;
 import com.Max.bam.data.dao.ThemeCardDao;
 import com.Max.bam.data.entity.ThemeCard;
+import com.Max.bam.ui.theme_card.ThemeCardRepository;
 
 import java.util.List;
 

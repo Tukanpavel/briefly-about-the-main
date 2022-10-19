@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.Max.bam.data.entity.ThemeCard;
-import com.Max.bam.data.repository.ThemeCardRepository;
 
 import java.util.List;
 

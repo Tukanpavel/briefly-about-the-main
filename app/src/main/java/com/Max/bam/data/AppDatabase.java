@@ -25,27 +25,6 @@ public abstract class AppDatabase extends RoomDatabase {
     public static final ExecutorService databaseWriteExecutor =
             Executors.newFixedThreadPool(NUMBER_OF_THREADS);
 
-    public static RoomDatabase.Callback sRoomDatabaseCallback = new RoomDatabase.Callback() {
-        @Override
-        public void onCreate(@NonNull SupportSQLiteDatabase db) {
-            super.onCreate(db);
-
-            // If you want to keep data through app restarts,
-            // comment out the following block
-            databaseWriteExecutor.execute(() -> {
-                // Populate the database in the background.
-                // If you want to start with more words, just add them.
-                ThemeCardDao dao = INSTANCE.INSTANCE.themeCardDao();
-                dao.deleteAll();
-
-                ThemeCard word = new ThemeCard("Hello", "sheesh");
-                dao.insert(word);
-                word = new ThemeCard("World", "bruh");
-                dao.insert(word);
-            });
-        }
-    };
-
     private static volatile AppDatabase INSTANCE;
 
 
@@ -56,7 +35,6 @@ public abstract class AppDatabase extends RoomDatabase {
                 if(INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                             AppDatabase.class, "app_database")
-                            .addCallback(sRoomDatabaseCallback)
                             .build();
                 }
             }
