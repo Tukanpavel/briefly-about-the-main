@@ -10,4 +10,6 @@ public interface ThemeRepository {
     LiveData<List<ThemeCard>> getThemeCardsLiveData();
     LiveData<List<ThemeCard>> getThemeCardsByTheme(String theme);
     void insert(ThemeCard themeCard);
-    }
+
+    void updateRandomData();
+}

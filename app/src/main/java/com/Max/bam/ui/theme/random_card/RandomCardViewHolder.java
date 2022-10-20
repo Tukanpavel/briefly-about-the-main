@@ -35,6 +35,6 @@ public class RandomCardViewHolder extends RecyclerView.ViewHolder implements Vie
 
     @Override
     public void onClick(View v) {
-
+        recycleViewClickListener.onClick(v, this.getLayoutPosition());
     }
 }

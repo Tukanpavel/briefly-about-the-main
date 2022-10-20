@@ -35,4 +35,10 @@ public class ThemeRepositoryImpl implements ThemeRepository {
     public void insert(ThemeCard themeCard) {
         AppDatabase.databaseWriteExecutor.execute(() -> themeCardDao.insert(themeCard));
     }
+
+    //TODO: implement theme randomization for RandomCard
+    @Override
+    public void updateRandomData() {
+
+    }
 }
