@@ -1,7 +1,7 @@
 package com.Max.bam.di;
 
-import com.Max.bam.ui.theme_card.ThemeCardRepository;
-import com.Max.bam.ui.theme_card.ThemeCardRepositoryImpl;
+import com.Max.bam.ui.theme.ThemeRepository;
+import com.Max.bam.ui.theme.ThemeRepositoryImpl;
 
 import dagger.Binds;
 import dagger.Module;
@@ -12,5 +12,5 @@ import dagger.hilt.android.components.ViewModelComponent;
 @InstallIn(ViewModelComponent.class)
 public abstract class RepositoryModule {
     @Binds
-    public abstract ThemeCardRepository provideThemeCardRepository(ThemeCardRepositoryImpl impl);
+    public abstract ThemeRepository provideThemeCardRepository(ThemeRepositoryImpl impl);
 }

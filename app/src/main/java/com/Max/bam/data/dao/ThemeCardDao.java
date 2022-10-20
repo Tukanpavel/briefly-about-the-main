@@ -21,6 +21,9 @@ public interface ThemeCardDao {
     @Delete
     void delete(ThemeCard themeCard);
 
+    @Query("Select * from ThemeCard where theme_name = :theme")
+    LiveData<List<ThemeCard>> getThemeCardsByTheme(String theme);
+
     @Query("Delete from ThemeCard")
     void deleteAll();
 

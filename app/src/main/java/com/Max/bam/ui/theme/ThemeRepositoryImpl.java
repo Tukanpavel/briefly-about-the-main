@@ -1,23 +1,22 @@
-package com.Max.bam.ui.theme_card;
+package com.Max.bam.ui.theme;
 
 import androidx.lifecycle.LiveData;
 
 import com.Max.bam.data.AppDatabase;
 import com.Max.bam.data.dao.ThemeCardDao;
 import com.Max.bam.data.entity.ThemeCard;
-import com.Max.bam.ui.theme_card.ThemeCardRepository;
 
 import java.util.List;
 
 import javax.inject.Inject;
 
 
-public class ThemeCardRepositoryImpl implements ThemeCardRepository {
+public class ThemeRepositoryImpl implements ThemeRepository {
     private final ThemeCardDao themeCardDao;
     private final LiveData<List<ThemeCard>> themeCardsLiveData;
 
     @Inject
-    public ThemeCardRepositoryImpl(ThemeCardDao themeCardDao) {
+    public ThemeRepositoryImpl(ThemeCardDao themeCardDao) {
         this.themeCardDao = themeCardDao;
         themeCardsLiveData = themeCardDao.getAll();
     }
@@ -28,9 +27,12 @@ public class ThemeCardRepositoryImpl implements ThemeCardRepository {
     }
 
     @Override
+    public LiveData<List<ThemeCard>> getThemeCardsByTheme(String theme) {
+        return themeCardDao.getThemeCardsByTheme(theme);
+    }
+
+    @Override
     public void insert(ThemeCard themeCard) {
-        AppDatabase.databaseWriteExecutor.execute(() -> {
-            themeCardDao.insert(themeCard);
-        });
+        AppDatabase.databaseWriteExecutor.execute(() -> themeCardDao.insert(themeCard));
     }
 }
