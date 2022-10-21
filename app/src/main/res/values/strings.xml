@@ -2,4 +2,7 @@
     <string name="app_name">bam</string>
     <string name="button4Name">Как появиись знаки зодиака?</string>
     <string name="add_word">add_word</string>
+    <string name="fav_button">fauvorites</string>
+    <string name="theme_card_nav">Карточки с темами</string>
+    <string name="random_card_nav">Случайные факты</string>
 </resources>

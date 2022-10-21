@@ -6,11 +6,11 @@ import com.Max.bam.ui.theme.ThemeRepositoryImpl;
 import dagger.Binds;
 import dagger.Module;
 import dagger.hilt.InstallIn;
-import dagger.hilt.android.components.ViewModelComponent;
+import dagger.hilt.android.components.ActivityComponent;
 
 @Module
-@InstallIn(ViewModelComponent.class)
-public abstract class RepositoryModule {
+@InstallIn(ActivityComponent.class)
+public abstract class AppRepositoryModule {
     @Binds
     public abstract ThemeRepository provideThemeCardRepository(ThemeRepositoryImpl impl);
 }
