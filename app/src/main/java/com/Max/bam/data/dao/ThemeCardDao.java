@@ -27,6 +27,9 @@ public interface ThemeCardDao {
     @Query("Delete from ThemeCard")
     void deleteAll();
 
+    @Query("Select distinct theme_name from ThemeCard order by random() limit :amount")
+    LiveData<List<String>> getRandomCardsByAmount(int amount);
+
     @Insert
     void insert(ThemeCard themeCard);
 }

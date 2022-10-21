@@ -36,21 +36,16 @@ public class ThemeViewModel extends ViewModel {
         return themeCards;
     }
 
-    public LiveData<List<ThemeCard>> getThemeCardsByTheme() {
-        return themeCardsByName;
+    public LiveData<List<ThemeCard>> getThemeCardsByTheme(String theme) {
+        return mRepository.getThemeCardsByTheme(theme);
     }
 
     public void setCurrentTheme(String theme) {
         currentTheme.setValue(theme);
     }
 
-    public List<String> getRandomThemeCards() {
-        List<String> themes = themeCards.getValue()
-                .stream()
-                .map(themeCard -> themeCard.themeName)
-                .collect(Collectors.toList());
-        Collections.shuffle(themes);
-        return themes.subList(0,3);
+    public LiveData<List<String>> getRandomThemeCards(int amount) {
+        return mRepository.getRandomThemeCardsByAmount(amount);
     }
 
     public void insert(ThemeCard card) {

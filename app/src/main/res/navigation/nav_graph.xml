@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/themeCardFragment">
+
+    <fragment
+        android:id="@+id/themeCardFragment"
+        android:name="com.Max.bam.ui.theme.card.ThemeCardFragment"
+        android:label="theme_card_fragment"
+        tools:layout="@layout/theme_card_fragment">
+        <action
+            android:id="@+id/action_themeCardFragment_to_themeTextFragment"
+            app:destination="@id/themeTextFragment">
+            <argument
+                android:name="theme_name"
+                android:defaultValue="null"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/randomCardFragment"
+        android:name="com.Max.bam.ui.theme.random_card.RandomCardFragment"
+        android:label="random_card_fragment"
+        tools:layout="@layout/random_card_fragment">
+        <action
+            android:id="@+id/action_randomCardFragment_to_themeTextFragment"
+            app:destination="@id/themeTextFragment">
+            <argument
+                android:name="theme_name"
+                android:defaultValue="null"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/themeTextFragment"
+        android:name="com.Max.bam.ui.theme.text.ThemeTextFragment"
+        android:label="theme_text_fragment"
+        tools:layout="@layout/theme_text_fragment">
+        <argument
+            android:name="theme_name"
+            android:defaultValue="null"
+            app:argType="string" />
+    </fragment>
+</navigation>

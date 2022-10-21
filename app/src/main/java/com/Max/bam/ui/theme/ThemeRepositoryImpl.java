@@ -32,6 +32,11 @@ public class ThemeRepositoryImpl implements ThemeRepository {
     }
 
     @Override
+    public LiveData<List<String>> getRandomThemeCardsByAmount(int amount) {
+        return themeCardDao.getRandomCardsByAmount(amount);
+    }
+
+    @Override
     public void insert(ThemeCard themeCard) {
         AppDatabase.databaseWriteExecutor.execute(() -> themeCardDao.insert(themeCard));
     }

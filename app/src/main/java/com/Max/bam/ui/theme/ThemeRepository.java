@@ -9,7 +9,7 @@ import java.util.List;
 public interface ThemeRepository {
     LiveData<List<ThemeCard>> getThemeCardsLiveData();
     LiveData<List<ThemeCard>> getThemeCardsByTheme(String theme);
+    LiveData<List<String>> getRandomThemeCardsByAmount(int amount);
     void insert(ThemeCard themeCard);
-
     void updateRandomData();
 }

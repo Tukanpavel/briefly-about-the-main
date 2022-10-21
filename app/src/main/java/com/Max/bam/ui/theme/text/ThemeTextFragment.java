@@ -13,8 +13,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.Max.bam.R;
+import com.Max.bam.data.entity.ThemeCard;
 import com.Max.bam.ui.theme.ThemeViewModel;
 
+import java.util.List;
+
+import dagger.hilt.android.AndroidEntryPoint;
+
+@AndroidEntryPoint
 public class ThemeTextFragment extends Fragment {
     private ThemeViewModel mViewModel;
 
@@ -31,15 +37,17 @@ public class ThemeTextFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_fragment, container, false);
+        View view = inflater.inflate(R.layout.theme_card_fragment, container, false);
         mViewModel = new ViewModelProvider(this).get(ThemeViewModel.class);
         RecyclerView recyclerView = view.findViewById(R.id.recyclerview);
         final ThemeTextListAdapter themeTextListAdapter = new ThemeTextListAdapter(
                 new ThemeTextListAdapter.ThemeTextDiff());
         recyclerView.setAdapter(themeTextListAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        String theme = ThemeTextFragmentArgs.fromBundle(getArguments()).getThemeName();
         mViewModel = new ViewModelProvider(this).get(ThemeViewModel.class);
-        mViewModel.getThemeCardsByTheme().observe(getViewLifecycleOwner(), themeTextListAdapter::submitList);
+        List<ThemeCard> cards = mViewModel.getThemeCardsByTheme(theme).getValue();
+        mViewModel.getThemeCardsByTheme(theme).observe(getViewLifecycleOwner(), themeTextListAdapter::submitList);
         return view;
     }
 }
