@@ -18,10 +18,13 @@ public interface ThemeCardDao {
     @Insert
     void insertAll(ThemeCard ... themeCards);
 
+    @Insert
+    void insertList(List<ThemeCard> themeCards);
+
     @Delete
     void delete(ThemeCard themeCard);
 
-    @Query("Select * from ThemeCard where theme_name = :theme")
+    @Query("Select * from ThemeCard where theme_name in(:theme)")
     LiveData<List<ThemeCard>> getThemeCardsByTheme(String theme);
 
     @Query("Delete from ThemeCard")
@@ -29,6 +32,9 @@ public interface ThemeCardDao {
 
     @Query("Select distinct theme_name from ThemeCard order by random() limit :amount")
     LiveData<List<String>> getRandomCardsByAmount(int amount);
+
+    @Query("Select url from ThemeCard where text = :text")
+    LiveData<String> getUrlByText(String text);
 
     @Insert
     void insert(ThemeCard themeCard);

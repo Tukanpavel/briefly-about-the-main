@@ -37,6 +37,11 @@ public class ThemeRepositoryImpl implements ThemeRepository {
     }
 
     @Override
+    public LiveData<String> getUrlByText(String text) {
+        return themeCardDao.getUrlByText(text);
+    }
+
+    @Override
     public void insert(ThemeCard themeCard) {
         AppDatabase.databaseWriteExecutor.execute(() -> themeCardDao.insert(themeCard));
     }

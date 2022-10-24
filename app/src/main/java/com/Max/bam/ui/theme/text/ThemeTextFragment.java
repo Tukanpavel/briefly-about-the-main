@@ -1,13 +1,19 @@
 package com.Max.bam.ui.theme.text;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -40,8 +46,23 @@ public class ThemeTextFragment extends Fragment {
         View view = inflater.inflate(R.layout.theme_card_fragment, container, false);
         mViewModel = new ViewModelProvider(this).get(ThemeViewModel.class);
         RecyclerView recyclerView = view.findViewById(R.id.recyclerview);
+        view.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                v.findViewById(R.id.myTextView).getParent().requestDisallowInterceptTouchEvent(false);
+                return false;
+            }
+        });
         final ThemeTextListAdapter themeTextListAdapter = new ThemeTextListAdapter(
-                new ThemeTextListAdapter.ThemeTextDiff());
+                new ThemeTextListAdapter.ThemeTextDiff(), (v, position) -> {
+            AppCompatTextView textView = (AppCompatTextView) v;
+            String text = textView.getText().toString();
+            LiveData<String> url = mViewModel.getUrlByText(text);
+            url.observe(getViewLifecycleOwner(), (uri) -> {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                startActivity(browserIntent);
+            });
+        });
         recyclerView.setAdapter(themeTextListAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         String theme = ThemeTextFragmentArgs.fromBundle(getArguments()).getThemeName();

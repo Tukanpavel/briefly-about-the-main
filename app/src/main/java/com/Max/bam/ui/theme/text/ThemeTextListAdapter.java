@@ -7,16 +7,19 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 
 import com.Max.bam.data.entity.ThemeCard;
+import com.Max.bam.ui.theme.RecycleViewClickListener;
 
 public class ThemeTextListAdapter extends ListAdapter<ThemeCard, ThemeTextViewHolder> {
-    public ThemeTextListAdapter(@NonNull DiffUtil.ItemCallback<ThemeCard> diffCallback) {
+    private final RecycleViewClickListener recycleViewClickListener;
+    public ThemeTextListAdapter(@NonNull DiffUtil.ItemCallback<ThemeCard> diffCallback, RecycleViewClickListener recycleViewClickListener) {
         super(diffCallback);
+        this.recycleViewClickListener = recycleViewClickListener;
     }
 
     @NonNull
     @Override
     public ThemeTextViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return ThemeTextViewHolder.create(parent);
+        return ThemeTextViewHolder.create(parent, recycleViewClickListener);
     }
 
     @Override
