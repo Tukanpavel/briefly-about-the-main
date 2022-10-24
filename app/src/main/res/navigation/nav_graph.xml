@@ -42,5 +42,9 @@
             android:name="theme_name"
             android:defaultValue="null"
             app:argType="string" />
+        <argument
+            android:name="url"
+            android:defaultValue="null"
+            app:argType="string" />
     </fragment>
 </navigation>

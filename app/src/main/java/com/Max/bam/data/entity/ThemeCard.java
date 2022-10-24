@@ -17,8 +17,12 @@ public class ThemeCard {
     @ColumnInfo(name = "text")
     public String text;
 
-    public ThemeCard(@NotNull String themeName, @NotNull String text) {
+    @ColumnInfo(name = "url")
+    public String url;
+
+    public ThemeCard(@NotNull String themeName, @NotNull String text, @NotNull String url) {
         this.themeName = themeName;
         this.text = text;
+        this.url = url;
     }
 }

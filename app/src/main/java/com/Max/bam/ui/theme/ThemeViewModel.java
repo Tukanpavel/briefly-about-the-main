@@ -26,8 +26,6 @@ public class ThemeViewModel extends ViewModel {
     public ThemeViewModel(ThemeRepository themeCardRepository) {
         mRepository = themeCardRepository;
         themeCards = themeCardRepository.getThemeCardsLiveData();
-        ThemeCard card = new ThemeCard("bruh", "sheesh");
-        insert(card);
         themeCardsByName = Transformations
                 .switchMap(currentTheme, mRepository::getThemeCardsByTheme);
     }
@@ -38,6 +36,10 @@ public class ThemeViewModel extends ViewModel {
 
     public LiveData<List<ThemeCard>> getThemeCardsByTheme(String theme) {
         return mRepository.getThemeCardsByTheme(theme);
+    }
+
+    public LiveData<String> getUrlByText(String text) {
+        return mRepository.getUrlByText(text);
     }
 
     public void setCurrentTheme(String theme) {
