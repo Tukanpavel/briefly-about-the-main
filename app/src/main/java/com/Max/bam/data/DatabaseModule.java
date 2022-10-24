@@ -8,12 +8,10 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-import com.Max.bam.R;
 import com.Max.bam.data.dao.ThemeCardDao;
 import com.Max.bam.data.data_example.ThemeCardsPrepopulator;
 import com.Max.bam.data.entity.ThemeCard;
 
-import javax.inject.Provider;
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -45,10 +43,10 @@ public class DatabaseModule {
                     public void onCreate(@NonNull SupportSQLiteDatabase db) {
                         super.onCreate(db);
                         AsyncTask.execute(() -> {
-                            ThemeCard themeCard = new ThemeCard("little did they knew", "goofy ahh uncle", "https://www.boredpanda.com/blog/wp-content/uploads/2022/07/Cat-Virus-Exe-Funny-Pics-188-62c3dd4206b72__700.jpg");
+                            ThemeCard themeCard = new ThemeCard("Кот", "Смешной кот", "https://www.boredpanda.com/blog/wp-content/uploads/2022/07/Cat-Virus-Exe-Funny-Pics-188-62c3dd4206b72__700.jpg");
                             database = AppDatabase.getDatabase(appContext);
-                            database.themeCardDao().insert(themeCard);
                             database.themeCardDao().insertList(ThemeCardsPrepopulator.getThemeCards());
+                            database.themeCardDao().insert(themeCard);
                         });
                     }
                 })
