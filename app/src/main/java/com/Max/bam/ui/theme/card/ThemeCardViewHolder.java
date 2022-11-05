@@ -19,7 +19,7 @@ public class ThemeCardViewHolder extends RecyclerView.ViewHolder implements View
         super(itemView);
         themeCardView = itemView.findViewById(R.id.textView);
         this.recycleViewClickListener = recycleViewInterface;
-        itemView.setOnClickListener(this);
+        themeCardView.setOnClickListener(this);
     }
 
     public static ThemeCardViewHolder create(ViewGroup parent, RecycleViewClickListener recycleViewInterface) {

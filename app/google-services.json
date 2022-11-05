@@ -1,34 +1,33 @@
 {
   "project_info": {
-    "project_number": "703860100024",
-    "firebase_url": "https://bam-92717-default-rtdb.firebaseio.com",
-    "project_id": "bam-92717",
-    "storage_bucket": "bam-92717.appspot.com"
+    "project_number": "316290512312",
+    "project_id": "bam-3a67e",
+    "storage_bucket": "bam-3a67e.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:703860100024:android:c75daaf10669efe699dd4d",
+        "mobilesdk_app_id": "1:316290512312:android:dfdfdd68e7f053c62a0b4d",
         "android_client_info": {
           "package_name": "com.Max.bam"
         }
       },
       "oauth_client": [
         {
-          "client_id": "703860100024-r5ksn997uk9uhfjqcleohbkvqm1lipqc.apps.googleusercontent.com",
+          "client_id": "316290512312-krg5795b9omupjt3dqj70a1jrhsj2ee1.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAQWED7ZFU7VowxKRcx99-upOSFRQk9BEk"
+          "current_key": "AIzaSyAHYpzZc_ux921Px-ccj4FwdK5TAg3fdw0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "703860100024-r5ksn997uk9uhfjqcleohbkvqm1lipqc.apps.googleusercontent.com",
+              "client_id": "316290512312-krg5795b9omupjt3dqj70a1jrhsj2ee1.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

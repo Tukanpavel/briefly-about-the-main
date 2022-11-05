@@ -42,10 +42,8 @@ public class RandomCardFragment extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.recyclerview);
         final RandomCardListAdapter randomCardListAdapter = new RandomCardListAdapter(
                 new RandomCardListAdapter.RandomCardDiff(), (v, position) -> {
-            LinearLayout linearLayout = (LinearLayout) v;
-            AppCompatTextView textView = (AppCompatTextView) linearLayout.getChildAt(0);
+            AppCompatTextView textView = (AppCompatTextView) v;
             String theme = textView.getText().toString();
-            // mViewModel.setCurrentTheme(theme);
             RandomCardFragmentDirections.ActionRandomCardFragmentToThemeTextFragment action =
                     RandomCardFragmentDirections.actionRandomCardFragmentToThemeTextFragment();
             action.setThemeName(theme);

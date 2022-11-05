@@ -41,15 +41,10 @@ public class ThemeCardFragment extends Fragment {
         mViewModel = new ViewModelProvider(this).get(ThemeViewModel.class);
         RecyclerView recyclerView = view.findViewById(R.id.recyclerview);
 
-        // вот эта лямбда - хуйня из stack overflow, наверное, есть способ получше. По-видимому, нет.
-
         final ThemeCardListAdapter themeCardListAdapter = new ThemeCardListAdapter(
                 new ThemeCardListAdapter.ThemeCardDiff(), (v, position) -> {
-            LinearLayout linearLayout = (LinearLayout) v;
-            AppCompatTextView textView = (AppCompatTextView) linearLayout.getChildAt(0);
+            AppCompatTextView textView = (AppCompatTextView) v;
             String theme = textView.getText().toString();
-            //TODO: убрать из ThemeViewModel функционал setCurrentThem и вырезать его из кода
-            //mViewModel.setCurrentTheme(theme);
             ThemeCardFragmentDirections.ActionThemeCardFragmentToThemeTextFragment action =
                     ThemeCardFragmentDirections.actionThemeCardFragmentToThemeTextFragment();
             action.setThemeName(theme);

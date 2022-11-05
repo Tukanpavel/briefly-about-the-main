@@ -43,7 +43,10 @@ public class DatabaseModule {
                     public void onCreate(@NonNull SupportSQLiteDatabase db) {
                         super.onCreate(db);
                         AsyncTask.execute(() -> {
-                            ThemeCard themeCard = new ThemeCard("Кот", "Смешной кот", "https://www.boredpanda.com/blog/wp-content/uploads/2022/07/Cat-Virus-Exe-Funny-Pics-188-62c3dd4206b72__700.jpg");
+                            ThemeCard themeCard = new ThemeCard(
+                                    "Кот",
+                                    "Смешной кот",
+                                    "https://sun9-52.userapi.com/impg/XVyKXHXYsca8hhZ9WWn5_vvKndNR3K-btWQqDg/RgQO2rWCrkw.jpg?size=1600x738&quality=95&sign=70e3c9fa83fc69b93dd1ad7439878db4&type=album");
                             database = AppDatabase.getDatabase(appContext);
                             database.themeCardDao().insertList(ThemeCardsPrepopulator.getThemeCards());
                             database.themeCardDao().insert(themeCard);

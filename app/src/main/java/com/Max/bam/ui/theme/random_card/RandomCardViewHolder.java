@@ -20,7 +20,7 @@ public class RandomCardViewHolder extends RecyclerView.ViewHolder implements Vie
         super(itemView);
         randomCardTextView = itemView.findViewById(R.id.textView);
         this.recycleViewClickListener = recycleViewClickListener;
-        itemView.setOnClickListener(this);
+        randomCardTextView.setOnClickListener(this);
     }
 
     public static RandomCardViewHolder create(ViewGroup parent, RecycleViewClickListener recycleViewClickListener) {
