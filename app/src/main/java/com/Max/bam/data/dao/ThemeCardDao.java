@@ -36,6 +36,9 @@ public interface ThemeCardDao {
     @Query("Select url from ThemeCard where text = :text")
     LiveData<String> getUrlByText(String text);
 
+    @Query("Select * from ThemeCard join ThemeCardToTag on id = (Select idTag from ThemeCardToTag where idTag = (Select idTag from Tag where tag_name in (:tagName)))")
+    LiveData<List<ThemeCard>> getThemeCardsByTag(String tagName);
+
     @Insert
     void insert(ThemeCard themeCard);
 }

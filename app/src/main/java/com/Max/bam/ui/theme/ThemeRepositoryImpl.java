@@ -32,6 +32,11 @@ public class ThemeRepositoryImpl implements ThemeRepository {
     }
 
     @Override
+    public LiveData<List<ThemeCard>> getThemeCardsByTag(String tagName) {
+        return themeCardDao.getThemeCardsByTheme(tagName);
+    }
+
+    @Override
     public LiveData<List<String>> getRandomThemeCardsByAmount(int amount) {
         return themeCardDao.getRandomCardsByAmount(amount);
     }
