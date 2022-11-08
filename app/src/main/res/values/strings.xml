@@ -5,4 +5,10 @@
     <string name="fav_button">fauvorites</string>
     <string name="theme_card_nav">Карточки с темами</string>
     <string name="random_card_nav">Случайные факты</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="genders">
+        <item>Мужской</item>
+        <item>Женский</item>
+    </string-array>
 </resources>

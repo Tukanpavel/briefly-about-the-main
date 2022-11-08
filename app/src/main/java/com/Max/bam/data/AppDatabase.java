@@ -9,13 +9,14 @@ import androidx.room.RoomDatabase;
 
 import com.Max.bam.data.dao.ThemeCardDao;
 import com.Max.bam.data.entity.ThemeCard;
+import com.Max.bam.data.entity.User;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 
 @Database(
-        entities = {ThemeCard.class},
+        entities = {ThemeCard.class, User.class},
         version = 1,
         exportSchema = false
 )

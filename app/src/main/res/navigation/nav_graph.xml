@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/themeCardFragment">
+    app:startDestination="@id/greetingsFragment">
 
     <fragment
         android:id="@+id/themeCardFragment"
@@ -46,5 +46,44 @@
             android:name="url"
             android:defaultValue="null"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/greetingsFragment"
+        android:name="com.Max.bam.ui.GreetingsFragment"
+        android:label="fragment_greetings"
+        tools:layout="@layout/fragment_greetings" >
+        <action
+            android:id="@+id/action_greetingsFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_greetingsFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.Max.bam.ui.user.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_themeCardFragment"
+            app:destination="@id/themeCardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.Max.bam.ui.user.login.RegistrationFragment"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/action_registrationFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.Max.bam.ui.user.profile.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_themeCardFragment"
+            app:destination="@id/themeCardFragment" />
     </fragment>
 </navigation>
