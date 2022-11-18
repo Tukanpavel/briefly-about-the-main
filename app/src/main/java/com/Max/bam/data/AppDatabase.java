@@ -8,6 +8,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 import com.Max.bam.data.dao.ThemeCardDao;
+import com.Max.bam.data.dao.UserDao;
 import com.Max.bam.data.entity.ThemeCard;
 import com.Max.bam.data.entity.User;
 
@@ -41,4 +42,5 @@ public abstract class AppDatabase extends RoomDatabase {
     }
 
     public abstract ThemeCardDao themeCardDao();
+    public abstract UserDao userDao();
 }

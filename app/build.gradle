@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId "com.Max.bam"
-        minSdk 24
+        minSdk 26
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -58,6 +58,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
     implementation 'com.google.firebase:firebase-database:20.1.0'
+    implementation 'com.google.firebase:firebase-auth:21.1.0'
 
     implementation "androidx.fragment:fragment:$fragment_version"
     implementation "com.google.dagger:hilt-android:$hilt_version"

@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "316290512312",
+    "firebase_url": "https://bam-3a67e-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "bam-3a67e",
     "storage_bucket": "bam-3a67e.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "316290512312-ooecl41os0bu8g79ml6i84og85m14p2r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Max.bam",
+            "certificate_hash": "a690e1e67fafe480fc228316463ae02dd405fe4c"
+          }
+        },
         {
           "client_id": "316290512312-krg5795b9omupjt3dqj70a1jrhsj2ee1.apps.googleusercontent.com",
           "client_type": 3

@@ -4,6 +4,7 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 public class User {
@@ -12,20 +13,17 @@ public class User {
 
     public String name;
 
-    public LocalDateTime birtDate;
+    public String birthDate;
 
     public String gender;
 
     public String eMail;
 
-    public String password;
 
-    public User(int id, String name, LocalDateTime birtDate, String gender, String eMail, String password) {
-        this.id = id;
+    public User(String name, String birthDate, String gender, String eMail) {
         this.name = name;
-        this.birtDate = birtDate;
+        this.birthDate = birthDate;
         this.gender = gender;
         this.eMail = eMail;
-        this.password = password;
     }
 }

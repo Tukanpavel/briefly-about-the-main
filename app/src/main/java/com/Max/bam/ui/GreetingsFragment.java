@@ -11,6 +11,8 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.Max.bam.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -33,16 +35,21 @@ public class GreetingsFragment extends Fragment implements View.OnClickListener 
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_greetings, container, false);
 
-        AppCompatButton loginButton = (AppCompatButton) view.findViewById(R.id.login_button);
-        AppCompatButton registrationButton = (AppCompatButton) view.findViewById(R.id.registration_button);
+        FirebaseUser mUser = FirebaseAuth.getInstance().getCurrentUser();
 
-        loginButton.setOnClickListener(this);
-        registrationButton.setOnClickListener(this);
+        if (mUser != null) {
+            NavHostFragment.findNavController(this).navigate(R.id.action_greetingsFragment_to_profileFragment);
+        } else {
 
+            AppCompatButton loginButton = (AppCompatButton) view.findViewById(R.id.login_button);
+            AppCompatButton registrationButton = (AppCompatButton) view.findViewById(R.id.registration_button);
+
+            loginButton.setOnClickListener(this);
+            registrationButton.setOnClickListener(this);
+        }
 
         return view;
     }

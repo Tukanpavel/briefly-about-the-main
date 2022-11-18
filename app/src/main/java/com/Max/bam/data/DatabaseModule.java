@@ -9,6 +9,7 @@ import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.Max.bam.data.dao.ThemeCardDao;
+import com.Max.bam.data.dao.UserDao;
 import com.Max.bam.data.data_example.ThemeCardsPrepopulator;
 import com.Max.bam.data.entity.ThemeCard;
 
@@ -30,6 +31,12 @@ public class DatabaseModule {
     @Singleton
     public ThemeCardDao provideThemeCardDao(AppDatabase appDatabase) {
         return appDatabase.themeCardDao();
+    }
+
+    @Provides
+    @Singleton
+    public UserDao provideUserDao(AppDatabase appDatabase) {
+        return appDatabase.userDao();
     }
 
 

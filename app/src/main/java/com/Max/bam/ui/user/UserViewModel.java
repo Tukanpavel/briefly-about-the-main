@@ -19,11 +19,11 @@ public class UserViewModel extends ViewModel {
         this.mUserRepository = mUserRepository;
     }
 
-    public LiveData<Long> addUser(User user) {
-        return mUserRepository.addUser(user)    ;
+    public void addUser(User user) {
+        mUserRepository.addUser(user);
     }
 
-    public LiveData<User> getUser(String email, String password) {
-        return mUserRepository.getUser(email, password);
+    public LiveData<User> getUser(String email) {
+        return mUserRepository.getUser(email);
     }
 }

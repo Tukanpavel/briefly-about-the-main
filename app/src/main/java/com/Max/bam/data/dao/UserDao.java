@@ -9,9 +9,9 @@ import com.Max.bam.data.entity.User;
 
 @Dao
 public interface UserDao {
-    @Query("Select * from user u where u.eMail = :email and u.password = :password")
-    LiveData<User> getUser(String email, String password);
+    @Query("Select * from user u where u.eMail = :email")
+    LiveData<User> getUser(String email);
 
     @Insert
-    LiveData<Long> addUser(User user);
+    void addUser(User user);
 }
