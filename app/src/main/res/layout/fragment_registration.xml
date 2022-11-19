@@ -46,7 +46,7 @@
             app:layout_constraintTop_toBottomOf="@id/registration_banner" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/username_registration"
+            android:id="@+id/registration_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="23dp"
@@ -70,7 +70,7 @@
             android:text="Дата рождения"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/username_registration" />
+            app:layout_constraintTop_toBottomOf="@id/registration_username" />
 
         <androidx.appcompat.widget.AppCompatSpinner
             android:id="@+id/registration_gender"

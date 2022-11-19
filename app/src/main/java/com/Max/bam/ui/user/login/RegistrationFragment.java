@@ -64,11 +64,14 @@ public class RegistrationFragment extends Fragment implements View.OnClickListen
 
         FirebaseUser mUser = mAuth.getCurrentUser();
 
-        mEMail = (AppCompatEditText) v.findViewById(R.id.registration_email);
-        mPassword = (AppCompatEditText) v.findViewById(R.id.registration_password);
+        mEMail = v.findViewById(R.id.registration_email);
+        mPassword = v.findViewById(R.id.registration_password);
+        mBDate = v.findViewById(R.id.registration_birth_date);
+        mName = v.findViewById(R.id.registration_username);
+        mGender = v.findViewById(R.id.registration_gender);
 
 
-        AppCompatButton button = (AppCompatButton) v.findViewById(R.id.registration_btn_confirm);
+        AppCompatButton button = v.findViewById(R.id.registration_btn_confirm);
 
         button.setOnClickListener(this);
 
